@@ -15,11 +15,10 @@ lingon.preProcessors.push('scss', function(context, globals) {
   return sass({includePaths: [__dirname]});
 });
 
-// TODO
-// gitDeploy(lingon, {
-//   remote: 'git@ghe.spotify.net:foss/spotify-github.git',
-//   branch: 'gh-pages'
-// });
+gitDeploy(lingon, {
+  remote: 'git@ghe.spotify.net:dflemstr/apollo-oss-site.git',
+  branch: 'gh-pages'
+});
 
 // gitDeploy(lingon, {
 //   remote: 'git@github.com:spotify/spotify.github.io.git',
