@@ -4,6 +4,7 @@ var lingon = require('lingon');
 var gitDeploy = require('lingon-git-deploy');
 var lr = require('lingon-livereload');
 var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
 
 lr(lingon);
 
@@ -13,6 +14,9 @@ lingon.global.url = 'https://spotify.github.io/apollo';
 
 lingon.preProcessors.push('scss', function(context, globals) {
   return sass({includePaths: [__dirname]});
+});
+lingon.postProcessors.push('scss', function() {
+  return autoprefixer();
 });
 
 gitDeploy(lingon, {
