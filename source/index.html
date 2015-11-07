@@ -1,7 +1,5 @@
 <!-- lingon: layout '/_layouts/default.ejs' -->
-<h1>Apollo I <br/> Flight Manual<br/>
-  <small>AP 507</small>
-</h1>
+<h1>Apollo I <br/> Flight Manual</h1>
 
 <p class="small disclaimer">
   This publication replaces MSFC-MAN-507 eleifend tellus mauris, id accumsan nisl tempor eget.
@@ -9,153 +7,95 @@
   diam.
 </p>
 
-<h2>General Description</h2>
+<section>
+  <h1>General Description</h1>
 
-<div class="two-columns">
-  <h3>Saturn V System Description</h3>
+  <div class="two-columns">
+    <h2>Apollo I</h2>
 
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel suscipit mi. Duis quis lacus
-    id
-    tellus fringilla tristique. Pellentesque convallis nec orci eu ultricies.
-  </p>
+    <p>
+      Apollo is a set of Java libraries that we use at Spotify when
+      writing backend services. The Apollo libraries help to simplify
+      the integration of a Spotify backend service with the other parts
+      of our backend infrastructure.
+    </p>
 
-  <pre>public static void main(String[] args)
-    throws LoadingException {
-  StandaloneService.boot(Small::init, "small", args);
-}</pre>
+    <p>
+      <!-- TODO: filler here -->
+      As part of its 1.0 release, the development of Apollo has been moved into the open. The hope
+      is to et lacinia nibh. Duis dignissim varius orci non eleifend. Suspendisse in congue justo,
+      id pretium odio. Sed lacinia nisl egestas dui elementum, quis maximus nisi vehicula. Mauris
+      tincidunt massa libero, quis pharetra ante laoreet vel. Phasellus vel sapien pellentesque,
+      ultricies nunc in, tincidunt felis.
+    </p>
 
-  <p>
-    Aenean eleifend tellus
-    mauris, id accumsan nisl tempor eget. Phasellus sollicitudin turpis vel aliquam sodales. Quisque
-    vitae porta neque. Pellentesque molestie tempor euismod. Nam nec ipsum neque. Curabitur ut
-    turpis
-    mi. Suspendisse vitae tincidunt libero. Integer et tellus velit. Morbi ut urna erat. Aliquam
-    mauris libero, pellentesque at varius cursus, venenatis volutpat diam. Nam id condimentum justo.
-  </p>
+    <p class="warning">
+      Curabitur elementum congue lacus, nec commodo purus feugiat non. Suspendisse euismod, leo eu
+      auctor volutpat, ipsum massa cursus purus, nec euismod urna felis non turpis.
+    </p>
 
-  <p class="warning">
-    Aenean vel leo nec erat venenatis malesuada non non elit. Duis tempus lectus a nisi auctor, eu
-    tristique arcu fringilla. Aenean eu mattis ligula. Nam tristique facilisis posuere. Nam risus
-    nulla, accumsan vel pretium vitae, molestie eget mi. Pellentesque habitant morbi tristique
-    senectus et netus et malesuada fames ac turpis egestas.
-  </p>
+    <h2>Apollo Standalone</h2>
 
-  <p>
-    Quisque vel neque sit amet nisl
-    tristique
-    viverra sed eget est. Ut iaculis, risus nec vestibulum molestie, arcu eros pellentesque augue,
-    non
-    hendrerit nisl dolor quis diam.
-  </p>
+    <p>
+      The apollo-standalone library is a standardized bundle of Apollo modules. It incorporates
+      both apollo-api and apollo-core and ties them together with several other standard modules so
+      that your service becomes a "good citizen" in our backend environments.
+    </p>
 
-  <pre>static void init(Environment environment) {
-  environment.routingEngine()
-      .registerRoute(Route.sync("GET", "/",
-                                rc -> "hello world"));
-}</pre>
+    <p>
+      Apollo-standalone gives you what you need to start your backend service. Apollo-standalone
+      also provides features that simplify reporting to the Alien monitoring service, creating and
+      managing Hermes clients, registering with Nameless, and configuring logging. Read more about
+      this library in the Apollo Standalone Service Readme.
+    </p>
 
-  <p>
-    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-    posuere cubilia Curae; Donec vehicula odio a varius maximus. Cras viverra odio justo, in
-    accumsan
-    urna interdum eu.
-  </p>
+    <h3>Apollo API</h3>
 
-  <h3>Interstage Data Flow</h3>
+    <p>
+      The apollo-api library is the Apollo library you are most likely to interact with. It gives
+      you the tools you need to define your service routes and your request/reply handlers.
+      (Services routes are the addresses that other backend services will use to send Hermes or HTTP
+      requests to your service.)
+    </p>
+  </div>
 
-  <p>
-    Nam mattis ullamcorper nisl, ut efficitur nulla. Sed eu justo purus. Quisque ut imperdiet nunc.
-    Donec dictum sapien vitae imperdiet tempor. Quisque sed sollicitudin metus. Curabitur et sapien
-    eget purus lacinia congue a id erat.
-  </p>
+  <fieldset>
+    <legend>Minimal Apollo Standalone Application</legend>
 
-  <ol>
-    <li>Vivamus fermentum vehicula enim.</li>
-    <li>In ac efficitur eros.</li>
-  </ol>
+    <pre><code class="java">public final class App {
 
-  <p>
-    Suspendisse eget convallis lectus. Fusce tempor nisl ac enim sollicitudin, tristique finibus
-    mauris tempus. Fusce augue ex, consectetur sit amet est id, posuere malesuada nunc. Aenean
-    laoreet
-    ultrices blandit.
-  </p>
-</div>
+  public static void main(String[] args) throws LoadingException {
+    StandaloneService.boot(App::init, "my-app", args);
+  }
 
-<fieldset>
-  <legend>Typical Perceptible Prelaunch Events</legend>
-  <p>
-    Etiam ornare augue ac porta rhoncus. Donec consequat luctus arcu sit amet pharetra. Etiam quis
-    ipsum non urna fringilla porta in bibendum purus. Suspendisse potenti. Fusce viverra rhoncus
-    odio vitae cursus. Morbi non mi vel purus tempus iaculis. Etiam ut diam molestie neque fermentum
-    facilisis. Nunc scelerisque quis massa a molestie. Duis eget nibh metus. Fusce congue at nisl id
-    accumsan.
-  </p>
-</fieldset>
+  static void init(Environment environment) {
+    environment.routingEngine()
+        .registerRoute(Route.sync("GET", "/", requestContext -> "hello world"));
+  }
+}</code></pre>
+  </fieldset>
 
-<div class="two-columns">
-  <h3>General Arrangement</h3>
+</section>
 
-  <p>
-    Morbi suscipit risus nec justo gravida vestibulum. Nulla interdum dapibus felis, sit amet semper
-    orci sagittis tincidunt. In bibendum faucibus sapien. Quisque nibh orci, tincidunt a gravida in,
-    fermentum sed lorem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse
-    egestas ultrices nisl sed lobortis. Nunc molestie ornare libero, non aliquam metus facilisis
-    vel.
-  </p>
+<section>
+  <h1>Internals</h1>
 
-  <h4>Launch Vehicle Development</h4>
+  <div class="two-columns">
+    <h2>Apollo Core</h2>
 
-  <p>
-    In faucibus vestibulum tristique. Sed consequat bibendum urna suscipit tempus. Cras massa diam,
-    pretium sed nibh ut, accumsan semper nisl. Vivamus pulvinar tincidunt imperdiet. Phasellus
-    elementum justo nibh, viverra tincidunt ipsum blandit non.
-  </p>
+    <p>
+      The apollo-core library manages the lifecycle (loading, starting, and stopping) of your
+      service on production machines. You do not usually need to interact directly with apollo-core;
+      think of it merely as "plumbing". For more information about this library, see the Apollo Core
+      Readme. <!-- TODO: add readme link -->
+    </p>
 
-  <h3>Range Safety and Instrumentation</h3>
+    <h2>Apollo Test</h2>
 
-  <p>
-    Maecenas vel erat sit amet odio luctus pretium. Duis viverra placerat mauris sagittis molestie.
-    Duis aliquet, eros sit amet viverra iaculis, lacus tortor volutpat arcu, sit amet commodo urna
-    augue at nisi. Duis convallis nibh ac neque ornare, eu efficitur justo imperdiet. Donec eu
-    placerat ex, eget malesuada est. Aenean nec molestie libero. Nam a congue lorem. Donec ante
-    massa,
-    suscipit quis sagittis a, venenatis ut purus. Maecenas tincidunt sapien id cursus scelerisque.
-    Curabitur augue arcu, imperdiet nec odio interdum, ornare vehicula erat.
-  </p>
-</div>
-
-<h2>Performance</h2>
-
-<div class="two-columns">
-  <h3>General Arrangement</h3>
-
-  <p>
-    Morbi suscipit risus nec justo gravida vestibulum. Nulla interdum dapibus felis, sit amet semper
-    orci sagittis tincidunt. In bibendum faucibus sapien. Quisque nibh orci, tincidunt a gravida in,
-    fermentum sed lorem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse
-    egestas ultrices nisl sed lobortis. Nunc molestie ornare libero, non aliquam metus facilisis
-    vel.
-  </p>
-
-  <h4>Launch Vehicle Development</h4>
-
-  <p>
-    In faucibus vestibulum tristique. Sed consequat bibendum urna suscipit tempus. Cras massa diam,
-    pretium sed nibh ut, accumsan semper nisl. Vivamus pulvinar tincidunt imperdiet. Phasellus
-    elementum justo nibh, viverra tincidunt ipsum blandit non.
-  </p>
-
-  <h3>Range Safety and Instrumentation</h3>
-
-  <p>
-    Maecenas vel erat sit amet odio luctus pretium. Duis viverra placerat mauris sagittis molestie.
-    Duis aliquet, eros sit amet viverra iaculis, lacus tortor volutpat arcu, sit amet commodo urna
-    augue at nisi. Duis convallis nibh ac neque ornare, eu efficitur justo imperdiet. Donec eu
-    placerat ex, eget malesuada est. Aenean nec molestie libero. Nam a congue lorem. Donec ante
-    massa,
-    suscipit quis sagittis a, venenatis ut purus. Maecenas tincidunt sapien id cursus scelerisque.
-    Curabitur augue arcu, imperdiet nec odio interdum, ornare vehicula erat.
-  </p>
-</div>
+    <p>
+      In addition to the three main Apollo libraries listed above, to help you write tests for your
+      service we have an additional library called apollo-test. It has helpers to set up a service
+      for testing, and to mock outgoing request responses.<
+    </p>
+  </div>
+</section>

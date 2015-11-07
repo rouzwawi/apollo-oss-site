@@ -5,7 +5,7 @@ $section-counter-padding: 10px;
 $warning-border-width: 2px;
 $warning-padding: 2px 10px;
 
-body {
+article {
   counter-reset: section;
 }
 
@@ -34,15 +34,19 @@ h1, .h1 {
   margin-top: 8rem;
 }
 
-h2, .h2 {
+section {
+  counter-increment: section;
+}
+
+section h1, section .h1 {
   border: $section-border-width solid $black;
   font-family: $font-family-monospace;
+  font-size: 2rem;
   font-weight: bolder;
   text-align: center;
   margin: 4rem auto 2rem;
   max-width: 34rem;
   padding: $section-padding;
-  counter-increment: section;
   position: relative;
 
   &::before {
@@ -57,7 +61,7 @@ h2, .h2 {
   }
 }
 
-h3, .h3 {
+section h2, section .h2 {
   font-weight: bold;
 }
 
@@ -95,4 +99,8 @@ p {
       box-shadow: 1px 1px $black, 2px 2px $black, 3px 3px $black;
     }
   }
+}
+
+code {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
