@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Apollo</title>
+    <meta name="description" content="Apollo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta property="og:title" content="Apollo">
+    <meta property="og:description" content="Apollo">
+    <meta name="twitter:card" content="summary">
+    
+    <meta name="twitter:url" content="https://spotify.github.io/apollo">
+    
+    <meta name="twitter:title" content="Apollo">
+    <meta name="twitter:description" content="Apollo">
+    <meta name="twitter:site" content="@SpotifyEng">
+    <!--[if IE]>
+    <link rel="shortcut icon" href="//d2c87l0yth4zbw.global.ssl.fastly.net/i/_global/favicon.ico">
+    <![endif]-->
+
+    <link rel="icon" href="//d2c87l0yth4zbw.global.ssl.fastly.net/i/_global/favicon.png">
+    <link rel="stylesheet" href="all.css">
+  </head>
+
+  <body>
+    <main>
+      <article class="container">
+<h1>Apollo I <br> Flight Manual</h1>
+
+<p class="small disclaimer">
+  This publication replaces MSFC-MAN-507 eleifend tellus mauris, id accumsan nisl tempor eget.
+  Phasellus sollicitudin turpis vel aliquam sodales. Cras id nisl eu odio ullamcorper auctor eu eu
+  diam.
+</p>
+
+<section>
+  <h1>General Description</h1>
+
+  <div class="two-columns">
+    <h2>Apollo I</h2>
+
+    <p>
+      Apollo is a set of Java libraries that we use at Spotify when
+      writing backend services. The Apollo libraries help to simplify
+      the integration of a Spotify backend service with the other parts
+      of our backend infrastructure.
+    </p>
+
+    <p>
+      <!-- TODO: filler here -->
+      As part of its 1.0 release, the development of Apollo has been moved into the open. The hope
+      is to et lacinia nibh. Duis dignissim varius orci non eleifend. Suspendisse in congue justo,
+      id pretium odio. Sed lacinia nisl egestas dui elementum, quis maximus nisi vehicula. Mauris
+      tincidunt massa libero, quis pharetra ante laoreet vel. Phasellus vel sapien pellentesque,
+      ultricies nunc in, tincidunt felis.
+    </p>
+
+    <p class="warning">
+      Curabitur elementum congue lacus, nec commodo purus feugiat non. Suspendisse euismod, leo eu
+      auctor volutpat, ipsum massa cursus purus, nec euismod urna felis non turpis.
+    </p>
+
+    <h2>Apollo Standalone</h2>
+
+    <p>
+      The apollo-standalone library is a standardized bundle of Apollo modules. It incorporates
+      both apollo-api and apollo-core and ties them together with several other standard modules so
+      that your service becomes a &quot;good citizen&quot; in our backend environments.
+    </p>
+
+    <p>
+      Apollo-standalone gives you what you need to start your backend service. Apollo-standalone
+      also provides features that simplify reporting to the Alien monitoring service, creating and
+      managing Hermes clients, registering with Nameless, and configuring logging. Read more about
+      this library in the Apollo Standalone Service Readme.
+    </p>
+
+    <h3>Apollo API</h3>
+
+    <p>
+      The apollo-api library is the Apollo library you are most likely to interact with. It gives
+      you the tools you need to define your service routes and your request/reply handlers.
+      (Services routes are the addresses that other backend services will use to send Hermes or HTTP
+      requests to your service.)
+    </p>
+  </div>
+
+  <fieldset>
+    <legend>Minimal Apollo Standalone Application</legend>
+
+    <pre><code class="java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> </span>{
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> LoadingException </span>{
+    StandaloneService.boot(App::init, &quot;my-app&quot;, args);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">(Environment environment)</span> </span>{
+    environment.routingEngine()
+        .registerRoute(Route.sync(&quot;GET&quot;, &quot;/&quot;, requestContext -&gt; &quot;hello world&quot;));
+  }
+}</code></pre>
+  </fieldset>
+
+</section>
+
+<section>
+  <h1>Internals</h1>
+
+  <div class="two-columns">
+    <h2>Apollo Core</h2>
+
+    <p>
+      The apollo-core library manages the lifecycle (loading, starting, and stopping) of your
+      service on production machines. You do not usually need to interact directly with apollo-core;
+      think of it merely as &quot;plumbing&quot;. For more information about this library, see the Apollo Core
+      Readme. <!-- TODO: add readme link -->
+    </p>
+
+    <h2>Apollo Test</h2>
+
+    <p>
+      In addition to the three main Apollo libraries listed above, to help you write tests for your
+      service we have an additional library called apollo-test. It has helpers to set up a service
+      for testing, and to mock outgoing request responses.&lt;
+    </p>
+  </div>
+</section>
+
+      </article>
+    </main>
+    <script src="https://use.typekit.net/acl2qta.js"></script>
+    <script type="text/javascript">try{Typekit.load({ async: true });}catch(e){}</script>
+  </body>
+</html>
